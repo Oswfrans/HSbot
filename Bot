@@ -1,0 +1,713 @@
+
+#check and play playable cards
+#check and attack face
+#press hpower
+#press endturn
+
+
+#check if it is your turn
+#not sure how to do this?
+
+def leftClick():
+    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN,0,0)
+    time.sleep(.1)
+    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+    print "Click." 
+
+def leftDown():
+    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN,0,0)
+    time.sleep(.1)
+    print 'left Down'
+         
+def leftUp():
+    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+    time.sleep(.1)
+    print 'left release'
+
+def mousePos(cord):
+    win32api.SetCursorPos((x_pad + cord[0], y_pad + cord[1])
+     
+def get_cords():
+    x,y = win32api.GetCursorPos()
+    x = x - x_pad
+    y = y - y_pad
+    print x,y
+ 
+
+def screengrab(): #need to check sublime at home
+
+def startGame():
+    #check sublime back home already written
+
+
+def getnumberofcreatures():
+    #so what we want to do is assign different grayscale sum values to different board and
+    #hand states which will then make the bot perform the required clicks
+    #will need to get the box values later and save the different grayscale sum values 
+
+    box = (45,427,45+63,427+16)
+    im = ImageOps.grayscale(ImageGrab.grab(box))
+    a = array(im.getcolors())
+    a = a.sum()
+    print a
+    #im.save(os.getcwd() + '\\seat_one__' + str(int(time.time())) + '.png', 'PNG')    
+    return a
+
+def getnumberofcards():
+    box = (45,427,45+63,427+16)
+    im = ImageOps.grayscale(ImageGrab.grab(box))
+    a = array(im.getcolors())
+    a = a.sum()
+    print a
+    #im.save(os.getcwd() + '\\seat_one__' + str(int(time.time())) + '.png', 'PNG')    
+    return a
+
+
+def getgamestate():
+    getnumberofcreatures()
+    getnumberofcards()
+
+#are boardstates even needed?
+
+class gameboard:
+    hpower=
+    endturn=
+    ehero=
+    hero=
+    toplay=
+    mulliganconfirm=
+
+class creatureandhandpositions:
+    1_card_a=
+    2_card_a=
+    2_card_b=
+    3_card_a=
+    3_card_b=
+    3_card_c=
+    4_card_a=
+    4_card_b=
+    4_card_c=
+    4_card_d=
+    5_card_a=
+    5_card_b=
+    5_card_c=
+    5_card_d=
+    5_card_e=
+    6_card_a=
+    6_card_b=
+    6_card_c=
+    6_card_d=
+    6_card_e=
+    6_card_f=
+    7_card_a=
+    7_card_b=
+    7_card_c=
+    7_card_d=
+    7_card_e=
+    7_card_f=
+    7_card_g=
+
+    1_creature_a=
+    2_creature_a=
+    2_creature_b=
+    3_creature_a=
+    3_creature_b=
+    3_creature_c=
+    4_creature_a=
+    4_creature_b=
+    4_creature_c=
+    4_creature_d=
+    5_creature_a=
+    5_creature_b=
+    5_creature_c=
+    5_creature_d=
+    5_creature_e=
+    6_creature_a=
+    6_creature_b=
+    6_creature_c=
+    6_creature_d=
+    6_creature_e=
+    6_creature_f=
+    7_creature_a=
+    7_creature_b=
+    7_creature_c=
+    7_creature_d=
+    7_creature_e=
+    7_creature_f=
+    7_creature_g=
+
+
+class States:
+    0_card=
+    1_card=
+    2_card=
+    3_card=
+    4_card=
+    5_card=
+    6_card=
+    7_card=
+    #8_card=
+    #9_card=
+
+    0_creature=
+    1_creature=
+    2_creature=
+    3_creature=
+    4_creature=
+    5_creature=
+    6_creature=
+    7_creature=
+
+def play():
+
+    s1=getnumberofcards()
+    if s1==0_card:
+        time.sleep(.1)
+
+    elif s1==1_card:
+        mousePos(1_card_a)
+        leftDown()
+        time.sleep(.1)
+        mousePos(toplay)
+        leftUp()
+        time.sleep(.1)
+
+    elif s1==2_card:
+        mousePos(2_card_a)
+        leftDown()
+        time.sleep(.1)
+        mousePos(toplay)
+        leftUp()
+        time.sleep(.1)
+
+        mousePos(2_card_b)
+        leftDown()
+        time.sleep(.1)
+        mousePos(toplay)
+        leftUp()
+        time.sleep(.1)
+
+    elif s1==3_card:
+        mousePos(3_card_a)
+        leftDown()
+        time.sleep(.1)
+        mousePos(toplay)
+        leftUp()
+        time.sleep(.1)
+
+        mousePos(3_card_b)
+        leftDown()
+        time.sleep(.1)
+        mousePos(toplay)
+        leftUp()
+        time.sleep(.1)
+        
+        mousePos(3_card_c)
+        leftDown()
+        time.sleep(.1)
+        mousePos(toplay)
+        leftUp()
+        time.sleep(.1)
+
+
+    elif s1==4_card:
+        mousePos(4_card_a)
+        leftDown()
+        time.sleep(.1)
+        mousePos(toplay)
+        leftUp()
+        time.sleep(.1)
+
+        mousePos(4_card_b)
+        leftDown()
+        time.sleep(.1)
+        mousePos(toplay)
+        leftUp()
+        time.sleep(.1)
+        
+        mousePos(4_card_c)
+        leftDown()
+        time.sleep(.1)
+        mousePos(toplay)
+        leftUp()
+        time.sleep(.1)
+
+        mousePos(4_card_d)
+        leftDown()
+        time.sleep(.1)
+        mousePos(toplay)
+        leftUp()
+        time.sleep(.1)
+
+    elif s1==5_card:
+        mousePos(5_card_a)
+        leftDown()
+        time.sleep(.1)
+        mousePos(toplay)
+        leftUp()
+        time.sleep(.1)
+
+        mousePos(5_card_b)
+        leftDown()
+        time.sleep(.1)
+        mousePos(toplay)
+        leftUp()
+        time.sleep(.1)
+        
+        mousePos(5_card_c)
+        leftDown()
+        time.sleep(.1)
+        mousePos(toplay)
+        leftUp()
+        time.sleep(.1)
+        mousePos(5_card_d)
+        leftDown()
+        time.sleep(.1)
+        mousePos(toplay)
+        leftUp()
+        time.sleep(.1)
+
+        mousePos(5_card_e)
+        leftDown()
+        time.sleep(.1)
+        mousePos(toplay)
+        leftUp()
+        time.sleep(.1)
+     
+
+    elif s1==6_card:
+        mousePos(6_card_a)
+        leftDown()
+        time.sleep(.1)
+        mousePos(toplay)
+        leftUp()
+        time.sleep(.1)
+
+        mousePos(6_card_b)
+        leftDown()
+        time.sleep(.1)
+        mousePos(toplay)
+        leftUp()
+        time.sleep(.1)
+        
+        mousePos(6_card_c)
+        leftDown()
+        time.sleep(.1)
+        mousePos(toplay)
+        leftUp()
+        time.sleep(.1)
+        
+        mousePos(6_card_d)
+        leftDown()
+        time.sleep(.1)
+        mousePos(toplay)
+        leftUp()
+        time.sleep(.1)
+
+        mousePos(6_card_e)
+        leftDown()
+        time.sleep(.1)
+        mousePos(toplay)
+        leftUp()
+        time.sleep(.1)
+
+        mousePos(6_card_f)
+        leftDown()
+        time.sleep(.1)
+        mousePos(toplay)
+        leftUp()
+        time.sleep(.1)
+
+    elif s1==7_card:
+
+        mousePos(7_card_a)
+        leftDown()
+        time.sleep(.1)
+        mousePos(toplay)
+        leftUp()
+        time.sleep(.1)
+
+        mousePos(7_card_b)
+        leftDown()
+        time.sleep(.1)
+        mousePos(toplay)
+        leftUp()
+        time.sleep(.1)
+        
+        mousePos(7_card_c)
+        leftDown()
+        time.sleep(.1)
+        mousePos(toplay)
+        leftUp()
+        time.sleep(.1)
+        
+        mousePos(7_card_d)
+        leftDown()
+        time.sleep(.1)
+        mousePos(toplay)
+        leftUp()
+        time.sleep(.1)
+
+        mousePos(7_card_e)
+        leftDown()
+        time.sleep(.1)
+        mousePos(toplay)
+        leftUp()
+        time.sleep(.1)
+
+        mousePos(7_card_f)
+        leftDown()
+        time.sleep(.1)
+        mousePos(toplay)
+        leftUp()
+        time.sleep(.1)
+
+        mousePos(7_card_g)
+        leftDown()
+        time.sleep(.1)
+        mousePos(toplay)
+        leftUp()
+        time.sleep(.1)
+
+    else:
+
+        mousePos(7_card_a)
+        leftDown()
+        time.sleep(.1)
+        mousePos(toplay)
+        leftUp()
+        time.sleep(.1)
+
+        mousePos(7_card_b)
+        leftDown()
+        time.sleep(.1)
+        mousePos(toplay)
+        leftUp()
+        time.sleep(.1)
+        
+        mousePos(7_card_c)
+        leftDown()
+        time.sleep(.1)
+        mousePos(toplay)
+        leftUp()
+        time.sleep(.1)
+        
+        mousePos(7_card_d)
+        leftDown()
+        time.sleep(.1)
+        mousePos(toplay)
+        leftUp()
+        time.sleep(.1)
+
+        mousePos(7_card_e)
+        leftDown()
+        time.sleep(.1)
+        mousePos(toplay)
+        leftUp()
+        time.sleep(.1)
+
+        mousePos(7_card_f)
+        leftDown()
+        time.sleep(.1)
+        mousePos(toplay)
+        leftUp()
+        time.sleep(.1)
+
+        mousePos(7_card_g)
+        leftDown()
+        time.sleep(.1)
+        mousePos(toplay)
+        leftUp()
+        time.sleep(.1)
+
+
+def attack():
+
+    s1=getnumberofcreatures()
+    if s1==0_creature:
+        time.sleep(.1)
+
+    elif s1==1_creature:
+        mousePos(1_creature_a)
+        leftDown()
+        time.sleep(.1)
+        mousePos(ehero)
+        leftUp()
+        time.sleep(.1)
+
+    elif s1==2_creature:
+        mousePos(2_creature_a)
+        leftDown()
+        time.sleep(.1)
+        mousePos(ehero)
+        leftUp()
+        time.sleep(.1)
+
+        mousePos(2_creature_b)
+        leftDown()
+        time.sleep(.1)
+        mousePos(ehero)
+        leftUp()
+        time.sleep(.1)
+
+    elif s1==3_creature:
+        mousePos(3_creature_a)
+        leftDown()
+        time.sleep(.1)
+        mousePos(ehero)
+        leftUp()
+        time.sleep(.1)
+
+        mousePos(3_creature_b)
+        leftDown()
+        time.sleep(.1)
+        mousePos(ehero)
+        leftUp()
+        time.sleep(.1)
+        
+        mousePos(3_creature_c)
+        leftDown()
+        time.sleep(.1)
+        mousePos(ehero)
+        leftUp()
+        time.sleep(.1)
+
+
+    elif s1==4_creature:
+        mousePos(4_creature_a)
+        leftDown()
+        time.sleep(.1)
+        mousePos(ehero)
+        leftUp()
+        time.sleep(.1)
+
+        mousePos(4_creature_b)
+        leftDown()
+        time.sleep(.1)
+        mousePos(ehero)
+        leftUp()
+        time.sleep(.1)
+        
+        mousePos(4_creature_c)
+        leftDown()
+        time.sleep(.1)
+        mousePos(ehero)
+        leftUp()
+        time.sleep(.1)
+
+        mousePos(4_creature_d)
+        leftDown()
+        time.sleep(.1)
+        mousePos(ehero)
+        leftUp()
+        time.sleep(.1)
+
+    elif s1==5_creature:
+        mousePos(5_creature_a)
+        leftDown()
+        time.sleep(.1)
+        mousePos(ehero)
+        leftUp()
+        time.sleep(.1)
+
+        mousePos(5_creature_b)
+        leftDown()
+        time.sleep(.1)
+        mousePos(ehero)
+        leftUp()
+        time.sleep(.1)
+        
+        mousePos(5_creature_c)
+        leftDown()
+        time.sleep(.1)
+        mousePos(ehero)
+        leftUp()
+        time.sleep(.1)
+        mousePos(5_creature_d)
+        leftDown()
+        time.sleep(.1)
+        mousePos(ehero)
+        leftUp()
+        time.sleep(.1)
+
+        mousePos(5_creature_e)
+        leftDown()
+        time.sleep(.1)
+        mousePos(ehero)
+        leftUp()
+        time.sleep(.1)
+     
+
+    elif s1==6_creature:
+        mousePos(6_creature_a)
+        leftDown()
+        time.sleep(.1)
+        mousePos(ehero)
+        leftUp()
+        time.sleep(.1)
+
+        mousePos(6_creature_b)
+        leftDown()
+        time.sleep(.1)
+        mousePos(ehero)
+        leftUp()
+        time.sleep(.1)
+        
+        mousePos(6_creature_c)
+        leftDown()
+        time.sleep(.1)
+        mousePos(ehero)
+        leftUp()
+        time.sleep(.1)
+        
+        mousePos(6_creature_d)
+        leftDown()
+        time.sleep(.1)
+        mousePos(ehero)
+        leftUp()
+        time.sleep(.1)
+
+        mousePos(6_creature_e)
+        leftDown()
+        time.sleep(.1)
+        mousePos(ehero)
+        leftUp()
+        time.sleep(.1)
+
+        mousePos(6_creature_f)
+        leftDown()
+        time.sleep(.1)
+        mousePos(ehero)
+        leftUp()
+        time.sleep(.1)
+
+    elif s1==7_creature:
+
+        mousePos(7_creature_a)
+        leftDown()
+        time.sleep(.1)
+        mousePos(ehero)
+        leftUp()
+        time.sleep(.1)
+
+        mousePos(7_creature_b)
+        leftDown()
+        time.sleep(.1)
+        mousePos(ehero)
+        leftUp()
+        time.sleep(.1)
+        
+        mousePos(7_creature_c)
+        leftDown()
+        time.sleep(.1)
+        mousePos(ehero)
+        leftUp()
+        time.sleep(.1)
+        
+        mousePos(7_creature_d)
+        leftDown()
+        time.sleep(.1)
+        mousePos(ehero)
+        leftUp()
+        time.sleep(.1)
+
+        mousePos(7_creature_e)
+        leftDown()
+        time.sleep(.1)
+        mousePos(ehero)
+        leftUp()
+        time.sleep(.1)
+
+        mousePos(7_creature_f)
+        leftDown()
+        time.sleep(.1)
+        mousePos(ehero)
+        leftUp()
+        time.sleep(.1)
+
+        mousePos(7_creature_g)
+        leftDown()
+        time.sleep(.1)
+        mousePos(ehero)
+        leftUp()
+        time.sleep(.1)
+
+    else:
+
+        mousePos(7_creature_a)
+        leftDown()
+        time.sleep(.1)
+        mousePos(ehero)
+        leftUp()
+        time.sleep(.1)
+
+        mousePos(7_creature_b)
+        leftDown()
+        time.sleep(.1)
+        mousePos(ehero)
+        leftUp()
+        time.sleep(.1)
+        
+        mousePos(7_creature_c)
+        leftDown()
+        time.sleep(.1)
+        mousePos(ehero)
+        leftUp()
+        time.sleep(.1)
+        
+        mousePos(7_creature_d)
+        leftDown()
+        time.sleep(.1)
+        mousePos(ehero)
+        leftUp()
+        time.sleep(.1)
+
+        mousePos(7_creature_e)
+        leftDown()
+        time.sleep(.1)
+        mousePos(ehero)
+        leftUp()
+        time.sleep(.1)
+
+        mousePos(7_creature_f)
+        leftDown()
+        time.sleep(.1)
+        mousePos(ehero)
+        leftUp()
+        time.sleep(.1)
+
+        mousePos(7_creature_g)
+        leftDown()
+        time.sleep(.1)
+        mousePos(ehero)
+        leftUp()
+        time.sleep(.1)
+
+def clickconfirm():
+    mousePos(mulliganconfirm)
+    leftClick()
+    time.sleep(.1)
+
+def endturn():
+    mousePos(hpower)
+    leftClick()
+    time.sleep(0.1)
+	
+    mousePos(endturn)
+    leftClick()
+    time.sleep(0.1)
+
+
+def hunt():
+    clickconfirm()
+    play()
+    attack()
+    endturn()
+    time.sleep(30)
+
+def main():
+    startGame()
+    while True:
+        Hunt()
+
+main()
